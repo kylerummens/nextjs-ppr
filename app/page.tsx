@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Suspense } from "react";
+import AsyncCounter from "./async-counter";
 
 export default function Home() {
   return (
@@ -46,6 +48,12 @@ export default function Home() {
           >
             Read our docs
           </a>
+        </div>
+        <div>
+          <div>Async counter:</div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AsyncCounter />
+          </Suspense>
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
