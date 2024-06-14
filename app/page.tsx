@@ -1,18 +1,23 @@
 import { Suspense } from "react";
 import AsyncCounter from "./async-counter";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div>
+    <div className="p-12">
 
-      This is some static content. The content below is streamed in after page load
+      <div className="mb-8">This is some static content. The content below is streamed in after page load</div>
 
-      <div>
-          <div>Async counter:</div>
+      <Card>
+        <CardHeader>
+          <CardTitle>Async Counter</CardTitle>
+        </CardHeader>
+        <CardContent>
           <Suspense fallback={<div>Loading...</div>}>
             <AsyncCounter />
           </Suspense>
-        </div>
+        </CardContent>
+      </Card>
 
     </div>
   )
